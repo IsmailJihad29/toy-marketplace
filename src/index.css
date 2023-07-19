@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=EB+Garamond:wght@500&family=Lilita+One&display=swap");
+
+.font-primary {
+  font-family: "EB Garamond", serif;
+}
+.nav-button {
+  @apply hover:bg-gradient-to-r from-pink-500 hover:to-yellow-500 rounded-lg mr-4 text-white font-bold;
+}
+
+.button-primary {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-2 px-4 rounded-xl transition duration-300 hover:animate-pulse hover:scale-105 mr-4
+}
