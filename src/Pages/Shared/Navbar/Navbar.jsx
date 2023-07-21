@@ -58,7 +58,9 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
+
         {/* to do -> Ekhane profile conditional korte  hobe   */}
+        <Link to={"/login"}><button className="nav-button btn bg-transparent ">Log in</button></Link>
         <div className="dropdown dropdown-end ">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">

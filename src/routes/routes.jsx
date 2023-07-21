@@ -5,6 +5,8 @@ import ToysDetails from "../Pages/ToysDetails/ToysDetails";
 import Error from "../Pages/ErrorPage/Error";
 import AllToys from "../Pages/Home/AllToys/AllToys";
 import AddToys from "../Pages/AddToys/AddToys";
+import Login from "../Pages/Login/Login/Login";
+import Register from "../Pages/Login/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,17 @@ const router = createBrowserRouter([
         path: "/add-toys",
         element: < AddToys/>
 
-      }
+      },
+      {
+        path: "/register",
+        element: < Register/>
+
+      },
+      {
+        path: "/login",
+        element: < Login/>
+
+      },
     ],
   },
 ]);
