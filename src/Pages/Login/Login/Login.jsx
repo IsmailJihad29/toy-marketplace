@@ -20,9 +20,9 @@ const Login = () => {
     const user = { email, password };
     console.log(user);
     login(email, password)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
+      .then(result => {
+        const user = result.user
+        console.log(user);
         Swal.fire({
           position: 'top-center',
           icon: 'success',
@@ -30,10 +30,9 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        navigate(from)
-    })
-
-
+        navigate(from, {replace: true})
+      })
+     .catch(error => console.log(error))
   };
 
   return (

@@ -4,7 +4,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => { 
+    logOut();
+  }
 
   const navItems = (
     <>
@@ -76,18 +80,16 @@ const Navbar = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
-                  src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  src={user?.photoURL}
                   title={user?.displayName}
                 />
               </div>
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box  w-52"
             >
-              <li>
-                <a>Logout</a>
-              </li>
+              <button onClick={handleLogOut} className="button-primary">Log Out</button>
             </ul>
           </div>
         ) : (
