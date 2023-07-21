@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import login from "../../../../public/Images/login/login.png";
+import React, { useContext, useState } from "react";
+import logIn from "../../../../public/Images/login/login.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [show, setShow] = useState(false);
+  const {login} = useContext(AuthContext)
 
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -16,13 +19,28 @@ const Login = () => {
     const password = form.password.value;
     const user = { email, password };
     console.log(user);
+    login(email, password)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Login successful.',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        navigate(from)
+    })
+
+
   };
 
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center">
-          <img className="w-3/4 lg:w-full" src={login} alt="" />
+          <img className="w-3/4 lg:w-full" src={logIn} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
