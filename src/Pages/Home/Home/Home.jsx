@@ -13,7 +13,6 @@ const Home = () => {
             <TopFigures/>
             <CategoryShop />
             <Testimonials /> 
-            
         </div>
     );
 };

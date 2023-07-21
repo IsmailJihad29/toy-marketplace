@@ -21,7 +21,7 @@ const Testimonials = () => {
         data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
-        className="w-2/6 mx-auto text-center border-0 border-b-4 border-rose-600 rounded-xl"
+        className="lg:w-2/6 mx-auto text-center border-0 border-b-4 border-rose-600 rounded-xl"
       >
         <h1 className="text-xl font-bold">See What Our Customers Says </h1>
         <h1 className="font-bold text-2xl uppercase font-primary text-rose-600">

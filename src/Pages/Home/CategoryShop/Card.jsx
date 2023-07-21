@@ -3,9 +3,9 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
-  const { _id, name, price, pictureURL, rating, description } = data;
+  const { _id, name, price, pictureURL, rating,  } = data;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl image-full">
+    <div className="card w-full lg:w-96  bg-base-100 shadow-xl image-full">
       <figure>
         <img src={pictureURL} alt="Shoes" />
       </figure>
@@ -18,7 +18,7 @@ const Card = ({ data }) => {
           <Rating initialRating={rating} readonly />
         </p>
         <div className="card-actions ">
-          <Link to={`/toys/${_id}`} >
+          <Link to={`/toysDetail/${_id}`} >
             <button className="btn button-primary">See Details </button>
           </Link>
         </div>

@@ -9,13 +9,13 @@ const Navbar = () => {
         <Link to={"/"}>Home</Link>
       </li>
       <li className="nav-button ">
-        <Link to={"/"}>All Toys</Link>
+        <Link to={"/alltoys"}>All Toys</Link>
       </li>
       <li className="nav-button ">
         <Link to={"/"}>My Toys</Link>
       </li>
       <li className="nav-button ">
-        <Link to={"/"}>Add Toys</Link>
+        <Link to={"/add-toys"}>Add Toys</Link>
       </li>
       <li className="nav-button ">
         <Link to={"/"}>Blogs</Link>

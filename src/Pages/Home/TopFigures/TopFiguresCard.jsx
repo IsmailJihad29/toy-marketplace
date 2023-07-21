@@ -1,25 +1,20 @@
-import React from 'react';
+import React from "react";
+import Rating from "react-rating";
 
 const TopFiguresCard = ({ data }) => {
-    const { _id, name, price, pictureURL, rating, description } = data;
-    return (
-        <div className="card card-side bg-base-100 shadow-xl">
-        <figure>
-                <img
-                    className='max-w-sm'
-            src={pictureURL}
-            alt="Movie"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">New movie is released!</h2>
-          <p>Click the button to watch on Jetflix app.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
-          </div>
-        </div>
+  const {  name,  pictureURL, rating, } = data;
+  return (
+    <div className="card card-side bg-base-100 shadow-xl px-5 lg:px-0">
+      <figure>
+        <img className="max-w-sm lg:w-72 rounded-xl" src={pictureURL}  />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title text-3xl font-bold font-primary uppercase text-rose-400">{ name}</h2>
+        <p><Rating initialRating={rating} readonly /></p>
+        
       </div>
-    );
+    </div>
+  );
 };
 
 export default TopFiguresCard;

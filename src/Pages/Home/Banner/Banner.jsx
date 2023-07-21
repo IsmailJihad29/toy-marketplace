@@ -6,6 +6,7 @@ import banner3 from "../../../../public/Images/banner/banner3.png"
 import banner4 from "../../../../public/Images/banner/banner4.jpg"
 import banner5 from "../../../../public/Images/banner/banner5.jpg"
 import banner6 from "../../../../public/Images/banner/banner6.jpg"
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const bannerContent = (
@@ -24,7 +25,7 @@ const Banner = () => {
             imagination, and bring your favorite characters to life
           </h3>
           <div>
-            <button className="button-primary">Discover More</button>
+            <Link to={'/alltoys'}><button className="button-primary">Discover More</button></Link>
             <button className="button-primary">
              About Us
             </button>
