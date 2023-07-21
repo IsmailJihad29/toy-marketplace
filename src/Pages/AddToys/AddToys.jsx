@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddToys = () => {
+  const { user } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -26,7 +28,6 @@ const AddToys = () => {
       availableQuantity,
       description,
     };
-   
 
     fetch("http://localhost:5000/toys", {
       method: "POST",
@@ -39,13 +40,13 @@ const AddToys = () => {
       .then((data) => {
         if (data.insertedId) {
           Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Added Toy Successfully',
+            position: "top-center",
+            icon: "success",
+            title: "Added Toy Successfully",
             showConfirmButton: false,
-            timer: 1500
-          })
-          form.reset()
+            timer: 1500,
+          });
+          form.reset();
         }
       })
       .catch((error) => console.error(error.massage));
@@ -53,7 +54,7 @@ const AddToys = () => {
 
   return (
     <div className="md:w-6/12 w-10/12 mx-auto my-16">
-      <h1 className="mb-12 font-primary uppercase text-4xl font-extrabold  tr text-rose-600 lg:text-5xl  text-center border-0 border-b-4 border-rose-500 rounded-lg w-1/2 mx-auto  ">
+      <h1 className="mb-12 font-primary uppercase text-4xl font-extrabold  tr text-rose-500 lg:text-5xl  text-center border-0 border-b-4 border-rose-500 rounded-lg w-1/2 mx-auto  ">
         Add Your Toy
       </h1>
       <form id="myform" onSubmit={handleSubmit}>
@@ -65,8 +66,11 @@ const AddToys = () => {
               type="text"
               name="sellerEmail"
               required
+              defaultValue={user?.email}
+              disabled
               placeholder="Seller Email"
-              className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
+              className=" block py-2.5 px-4 w-full  bg-transparent border-0 border-b-2 border-rose-500 rounded-lg peer"
+              // className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
             />
           </label>
         </div>
@@ -78,8 +82,10 @@ const AddToys = () => {
               required
               type="text"
               name="sellerName"
+              defaultValue={user?.displayName}
               placeholder="Seller Name"
-              className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
+              disabled
+              className="block py-2.5 px-4 w-full  bg-transparent border-0 border-b-2 border-rose-500 rounded-lg peer"
             />
           </label>
         </div>
@@ -92,7 +98,7 @@ const AddToys = () => {
               type="text"
               name="name"
               placeholder="Seller Name"
-              className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
+              className="input input-bordered border-b-2 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
             />
           </label>
         </div>
@@ -105,7 +111,7 @@ const AddToys = () => {
               type="url"
               name="pictureURL"
               placeholder="Seller Name"
-              className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
+              className="input input-bordered border-b-2 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
             />
           </label>
         </div>
@@ -137,12 +143,12 @@ const AddToys = () => {
               type="number"
               name="price"
               id="price"
-              className="block py-2.5 px-0 w-full   bg-transparent border-0 border-b-2 border-rose-300 rounded-lg   focus:outline-none focus:ring-0  peer"
+              className="block py-2.5 px-o w-full   bg-transparent border-0 border-b-2 border-rose-300 rounded-lg   focus:outline-none focus:ring-0  peer"
               placeholder=" "
             />
             <label
               htmlFor="price"
-              className="peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute px-4  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               price
             </label>
@@ -156,14 +162,14 @@ const AddToys = () => {
               id="rating"
               min="1"
               max="5"
-                // value={value}
+              // value={value}
               //   onChange={handleInputChange}
               className="block py-2.5 px-0 w-full   bg-transparent border-0 border-b-2 border-rose-300 rounded-lg   focus:outline-none focus:ring-0  peer"
               placeholder=" "
             />
             <label
               htmlFor="rating"
-              className="peer-focus:font-medium absolute   duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute px-4  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Rating
             </label>
@@ -180,7 +186,7 @@ const AddToys = () => {
             />
             <label
               htmlFor="availableQuantity"
-              className="peer-focus:font-medium absolute    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute  px-4  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Available Quantity
             </label>
@@ -195,7 +201,7 @@ const AddToys = () => {
               type="textarea"
               name="description"
               placeholder="Description"
-              className="input input-bordered border-b-4 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
+              className="input input-bordered border-b-2 border-0 rounded-lg border-rose-500 focus:outline-none w-full"
             />
           </label>
         </div>
