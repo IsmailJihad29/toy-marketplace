@@ -21,7 +21,7 @@ const Navbar = () => {
       {user && (
         <>
           <li className="nav-button ">
-            <Link to={"/"}>My Toys</Link>
+            <Link to={"/mytoys"}>My Toys</Link>
           </li>
           <li className="nav-button ">
             <Link to={"/add-toys"}>Add Toys</Link>

@@ -17,13 +17,10 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
 
-    const user = { name, email, photo, password };
-    console.log(user);
 
     createUser(email, password)
       .then((result) => {
           const user = result.user
-          console.log(user);
           updateUser(name, photo)
           Swal.fire({
             position: 'top-center',

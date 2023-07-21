@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
 import { BiSolidCategory,  } from "react-icons/bi"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const ToysDetails = () => {
+  const {user} = useContext(AuthContext)
   const data = useLoaderData();
   const toaster = () => toast("Successfully added to your cart!!");
 
@@ -54,9 +56,13 @@ const ToysDetails = () => {
             </p>
 
             <p className="py-6">{description}</p>
-            <button onClick={toaster} className="btn button-primary">
+           {
+              user.email !== sellerEmail &&(
+                 <button onClick={toaster} className="btn button-primary">
               Buy Now
             </button>
+             )
+           }
           </div>
           <ToastContainer />
         </div>
