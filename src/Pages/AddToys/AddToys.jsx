@@ -38,7 +38,7 @@ const AddToys = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.insertedId > 0) {
           Swal.fire({
             position: "top-center",
             icon: "success",

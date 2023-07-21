@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
-import { BiSolidCategory,  } from "react-icons/bi"
+import { BiSolidCategory } from "react-icons/bi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const ToysDetails = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const data = useLoaderData();
   const toaster = () => toast("Successfully added to your cart!!");
 
   const {
+    _id,
     name,
     price,
     pictureURL,
@@ -19,8 +20,8 @@ const ToysDetails = () => {
     description,
     sellerEmail,
     sellerName,
-      availableQuantity,
-      subCategory
+    availableQuantity,
+    subCategory,
   } = data;
   return (
     <div>
@@ -29,7 +30,7 @@ const ToysDetails = () => {
           <img src={pictureURL} className="max-w-sm rounded-lg shadow-2xl" />
           <div className="ml-5">
             <div className="badge badge-warning gap-2">
-             <BiSolidCategory/>
+              <BiSolidCategory />
               {subCategory}
             </div>
 
@@ -56,13 +57,18 @@ const ToysDetails = () => {
             </p>
 
             <p className="py-6">{description}</p>
-           {
-              user.email !== sellerEmail &&(
-                 <button onClick={toaster} className="btn button-primary">
-              Buy Now
-            </button>
-             )
-           }
+
+            {user?.email !== sellerEmail ? (
+               <button onClick={toaster} className="btn button-primary">
+               Buy Now
+             </button> 
+            ) : (
+              <Link to={`/update/${_id}`}>
+                <button  className="btn button-primary">
+              Update Toy Info
+            </button> 
+                </Link>
+            )}
           </div>
           <ToastContainer />
         </div>

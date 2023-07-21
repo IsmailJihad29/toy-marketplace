@@ -52,18 +52,17 @@ const UpdateToy = () => {
               body: JSON.stringify(toys),
             }
           )
-            .then((response) => response.json())
+            .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              if (data.insertedId) {
+              if (data.modifiedCount > 0) {
                 Swal.fire({
-                  title: "success",
-                  text: "toys Added Successfully",
-                  showDenyButton: true,
-                  showCancelButton: true,
-                  icon: "success",
-                  confirmButtonText: "Cool",
-                });
+                    position: "top-center",
+                    icon: "success",
+                    title: `${name} is Updated Successfully`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
               }
             })
             .catch((err) => {
