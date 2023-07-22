@@ -64,7 +64,7 @@ const Blog = () => {
       </div>
       {/*   qus 5 */}
       <div className="card w-full bg-base-100 shadow-xl">
-        {/* <div className="card-body">
+        <div className="card-body">
           <h2 className="card-title">What is Nest JS??</h2>
           <p>
             In MongoDB, <span className="text-rose-500">"aggregate"</span>
@@ -75,7 +75,7 @@ const Blog = () => {
             It's like a powerful tool for analyzing and summarizing data in
             MongoDB.
           </p>
-        </div> */}
+        </div>
       </div>
     </div>
   );
