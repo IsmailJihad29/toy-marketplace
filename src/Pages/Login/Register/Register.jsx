@@ -9,7 +9,8 @@ import useTitle from "../../../hooks/useTitle";
 const Register = () => {
   useTitle("Register");
   const { createUser, updateUser } = useContext(AuthContext);
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
     const navigate = useNavigate()
 
   const handleRegister = (event) => {
@@ -34,7 +35,11 @@ const Register = () => {
           });
           navigate("/")
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage)
+        console.log(error.message)
+      });
   };
   return (
     <div className="hero min-h-screen">
@@ -113,6 +118,7 @@ const Register = () => {
                   value="Register"
                 />
               </div>
+              <p className="text-2xl text-red-600">{error}</p>
               <p className="mt-2 text-center font-semibold">
                 Already A User ?{" "}
                 <Link to={"/login"}>

@@ -13,6 +13,8 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
 
+  const [error, setError] = useState("");
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -31,7 +33,11 @@ const Login = () => {
         });
         navigate(from, {replace: true})
       })
-     .catch(error => console.log(error))
+      .catch(error => {
+        const errorMessage = error.message;
+        setError(errorMessage)
+        console.log(error.message)
+      })
   };
 
   return (
@@ -82,6 +88,7 @@ const Login = () => {
                   value="Login"
                 />
               </div>
+              <p className="text-2xl text-red-600">{error}</p>
               <p className="mt-2 text-center font-semibold">New Here ? <Link to={"/register"}><span className="text-[#FF725E]">Register Here</span></Link></p>
             </form>
             <SocialLogin/>
