@@ -19,7 +19,7 @@ const Blog = () => {
         </div>
       </div>
       {/* qus 2 */}
-      {/* <div className="card w-full bg-base-100 shadow-xl">
+      <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">What is an refresh token?.</h2>
           <p>
@@ -30,9 +30,9 @@ const Blog = () => {
             master key lasts longer and is more reliable than the access key.
           </p>
         </div>
-      </div> */}
+      </div>
       {/* qus 3 */}
-      <div className="card w-full bg-base-100 shadow-xl">
+      {/* <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title"> Comparing SQL and NoSQL databases ??</h2>
           <p>
@@ -50,7 +50,7 @@ const Blog = () => {
             the same level of consistency as SQL databases
           </p>
         </div>
-      </div>
+      </div> */}
       {/* qus 4 */}
       <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
