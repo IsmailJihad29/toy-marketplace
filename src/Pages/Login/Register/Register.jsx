@@ -101,7 +101,7 @@ const Register = () => {
                   name="password"
                   className="input input-bordered"
                 />
-                {/* show password */}
+                {/* show password section  */}
                 <label className="label">
                   <input
                     onClick={() => setShow(!show)}

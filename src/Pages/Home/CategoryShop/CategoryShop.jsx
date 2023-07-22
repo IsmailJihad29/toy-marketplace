@@ -8,7 +8,7 @@ const CategoryShop = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://figlandia-server-ismailjihad29.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

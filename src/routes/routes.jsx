@@ -30,12 +30,12 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://figlandia-server-ismailjihad29.vercel.app/toys/${params.id}`),
       },
       {
         path: "/alltoys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/toys"),
+        loader: () => fetch("https://figlandia-server-ismailjihad29.vercel.app/toys"),
       },
       {
         path: "/add-toys",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             <MyToys />
           </PrivetRoutes>
         ),
-        loader: () => fetch('http://localhost:5000/toys'),
+        loader: () => fetch('https://figlandia-server-ismailjihad29.vercel.app/toys'),
       },
       {
         path: "/update/:id",
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             <UpdateToy/>
           </PrivetRoutes>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`),
+        loader: ({params}) => fetch(`https://figlandia-server-ismailjihad29.vercel.app/toys/${params.id}`),
       },
       {
         path: "/blog",

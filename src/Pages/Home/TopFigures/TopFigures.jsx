@@ -5,7 +5,7 @@ const TopFigures = () => {
   const [topToys, setTopToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://figlandia-server-ismailjihad29.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         setTopToys(data);

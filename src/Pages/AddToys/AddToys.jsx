@@ -31,7 +31,7 @@ const AddToys = () => {
       description,
     };
 
-    fetch("http://localhost:5000/toys", {
+    fetch("https://figlandia-server-ismailjihad29.vercel.app/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

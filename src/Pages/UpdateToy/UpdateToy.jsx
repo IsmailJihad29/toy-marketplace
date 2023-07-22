@@ -45,7 +45,7 @@ const UpdateToy = () => {
         };
     
         fetch(
-            `http://localhost:5000/toys/${_id}`,
+            `https://figlandia-server-ismailjihad29.vercel.app/toys/${_id}`,
             {
               method: "PATCH",
               headers: {
