@@ -5,8 +5,10 @@ import { BiSolidCategory } from "react-icons/bi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const ToysDetails = () => {
+  useTitle("Details")
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
   const toaster = () => toast("Successfully added to your cart!!");

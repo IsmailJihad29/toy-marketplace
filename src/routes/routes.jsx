@@ -10,6 +10,7 @@ import Register from "../Pages/Login/Register/Register";
 import PrivetRoutes from "./PrivetRoutes";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/UpdateToy/UpdateToy";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,6 @@ const router = createBrowserRouter([
         path: "/toysDetail/:id",
         element: (
           <PrivetRoutes>
-            {" "}
             <ToysDetails />
           </PrivetRoutes>
         ),
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-toys",
-        element: <AddToys />,
+        element:<PrivetRoutes> <AddToys /></PrivetRoutes>,
       },
       {
         path: "/mytoys",
@@ -58,6 +58,10 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element:<Blog/>
       },
       {
         path: "/register",

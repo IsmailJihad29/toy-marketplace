@@ -3,8 +3,11 @@ import register from "../../../../public/Images/login/register.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../../SocialLogin/SocialLogin";
+import useTitle from "../../../hooks/useTitle";
 
 const Register = () => {
+  useTitle("Register");
   const { createUser, updateUser } = useContext(AuthContext);
     const [show, setShow] = useState(false);
     const navigate = useNavigate()
@@ -117,6 +120,7 @@ const Register = () => {
                 </Link>
               </p>
             </form>
+            <SocialLogin/>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ const Navbar = () => {
         </>
       )}
       <li className="nav-button ">
-        <Link to={"/"}>Blogs</Link>
+        <Link to={"/blog"}>Blogs</Link>
       </li>
     </>
   );

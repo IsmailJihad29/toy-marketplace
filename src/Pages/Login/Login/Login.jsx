@@ -3,6 +3,7 @@ import logIn from "../../../../public/Images/login/login.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../../SocialLogin/SocialLogin";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -83,6 +84,7 @@ const Login = () => {
               </div>
               <p className="mt-2 text-center font-semibold">New Here ? <Link to={"/register"}><span className="text-[#FF725E]">Register Here</span></Link></p>
             </form>
+            <SocialLogin/>
           </div>
         </div>
       </div>

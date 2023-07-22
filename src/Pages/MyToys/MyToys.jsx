@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import ToysCard from './ToysCard';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
+  useTitle('My Toys');
     const {user} = useContext(AuthContext)
     const alltoys = useLoaderData()
 
