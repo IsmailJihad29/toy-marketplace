@@ -32,7 +32,7 @@ const Blog = () => {
         </div>
       </div>
       {/* qus 3 */}
-      {/* <div className="card w-full bg-base-100 shadow-xl">
+      <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title"> Comparing SQL and NoSQL databases ??</h2>
           <p>
@@ -50,9 +50,9 @@ const Blog = () => {
             the same level of consistency as SQL databases
           </p>
         </div>
-      </div> */}
+      </div>
       {/* qus 4 */}
-      <div className="card w-full bg-base-100 shadow-xl">
+      {/* <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">What is express js?.</h2>
           <p>
@@ -61,7 +61,7 @@ const Blog = () => {
             using JavaScript. It makes creating web services easier and faster.
           </p>
         </div>
-      </div>
+      </div> */}
       {/*   qus 5 */}
       <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
