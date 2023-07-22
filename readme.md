@@ -1,8 +1,7 @@
 # TOY Marketplace <a name="Figlandia"></a>
 
-> React
->
-> > project
+
+> project Figlandia
 
 ---
 Figlanida is an online Action Figure shop where users can explore and purchase a wide range of Action Figures in different categories. The website offers a user-friendly interface with various features to enhance the Action Figure shopping experience.
